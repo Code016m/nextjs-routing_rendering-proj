@@ -1,9 +1,13 @@
-export default function ArchiveLayout({ archive, latest }) {
+import NewsList from "@/components/news-list";
+import { getLatestNews } from "@/lib/news";
+
+export default function LatestNewsPage() {
+  const latestNews = getLatestNews();
+
   return (
-    <div>
-      <h1>News Archive</h1>
-      <section id="archive-filter">{archive}</section>
-      <section id="archive-latest">{latest}</section>
-    </div>
+    <>
+      <h2>Latest News</h2>
+      <NewsList news={latestNews} />
+    </>
   );
 }
