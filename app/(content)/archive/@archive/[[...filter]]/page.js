@@ -2,8 +2,8 @@ import Link from "next/link";
 
 import NewsList from "@/components/news-list";
 import {
-  getAvailableNewsYears,
   getAvailableNewsMonths,
+  getAvailableNewsYears,
   getNewsForYear,
   getNewsForYearAndMonth,
 } from "@/lib/news";
@@ -50,6 +50,7 @@ export default function FilteredNewsPage({ params }) {
               const href = selectedYear
                 ? `/archive/${selectedYear}/${link}`
                 : `/archive/${link}`;
+
               return (
                 <li key={link}>
                   <Link href={href}>{link}</Link>
